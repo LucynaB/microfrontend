@@ -6,6 +6,7 @@ export default () => {
 
     useEffect(() => {
         startMarketing(ref.current);
+        
     });
 
     return <div ref={ref}/>
