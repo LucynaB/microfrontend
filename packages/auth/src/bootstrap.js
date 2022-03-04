@@ -4,7 +4,7 @@ import {createMemoryHistory, createBrowserHistory} from 'history';
 import App from './App';
 
 //Function to start up the app
-const startAuth = (el, {onNavigate, defaultHistory, initialPath}) => {
+const startAuth = (el, {onSignIn, onNavigate, defaultHistory, initialPath}) => {
     const history = defaultHistory || createMemoryHistory({
         initialEntries: [initialPath]
     });
@@ -12,7 +12,7 @@ const startAuth = (el, {onNavigate, defaultHistory, initialPath}) => {
         history.listen(onNavigate);
     }
 
-    ReactDOM.render(<App history={history}/>, el);
+    ReactDOM.render(<App onSignIn={onSignIn} history={history}/>, el);
 
     return {
         onParentNavigate({pathname: nextPathname}) {
