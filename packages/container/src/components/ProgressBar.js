@@ -18,7 +18,7 @@ export default () => {
 
     return (
         <div className={classes.bar}>
-            <LinearProgress/>
+            <LinearProgress />
         </div>
     )
 };
