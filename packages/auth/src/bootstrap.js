@@ -4,7 +4,7 @@ import {createMemoryHistory, createBrowserHistory} from 'history';
 import App from './App';
 
 //Function to start up the app
-const startMarketing = (el, {onNavigate, defaultHistory, initialPath}) => {
+const startAuth = (el, {onNavigate, defaultHistory, initialPath}) => {
     const history = defaultHistory || createMemoryHistory({
         initialEntries: [initialPath]
     });
@@ -28,12 +28,12 @@ const startMarketing = (el, {onNavigate, defaultHistory, initialPath}) => {
 //If we are in development in isolation
 //call start function immediately
 if (process.env.NODE_ENV === 'development') {
-    const devRoot = document.querySelector('#_marketing-dev-root');
+    const devRoot = document.querySelector('#_auth-dev-root');
     if (devRoot) {
-        startMarketing(devRoot, {defaultHistory: createBrowserHistory()});
+        startAuth(devRoot, {defaultHistory: createBrowserHistory()});
     }
 }
 
 //We are running through container
 //and we should export start function
-export {startMarketing};
+export {startAuth};

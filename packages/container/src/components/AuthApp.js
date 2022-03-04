@@ -1,4 +1,4 @@
-import {startMarketing} from 'marketing/MarketingApp';
+import {startAuth} from 'auth/AuthApp';
 import React, {useRef, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 
@@ -7,7 +7,7 @@ export default () => {
     const history = useHistory();
 
     useEffect(() => {
-        const {onParentNavigate} = startMarketing(ref.current, {
+        const {onParentNavigate} = startAuth(ref.current, {
             initialPath: history.location.pathname,
             onNavigate: ({pathname: nextPathname}) => {
                 const {pathname} = history.location;
